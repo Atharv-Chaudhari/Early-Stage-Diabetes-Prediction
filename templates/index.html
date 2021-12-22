@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Risk Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon"
+        href="https://cdn-icons.flaticon.com/png/512/5935/premium/5935561.png?token=exp=1640153661~hmac=593b0fae5431e8821e64396846f55b1b">
+    <style>
+        .submits {
+            width: 50%;
+            margin-left: 25%;
+        }
+
+        .others {
+            margin-top: -11%;
+            padding-left: 50%;
+            width: 90%;
+        }
+
+        @media (max-width:1000px) {
+            body {
+                background-size: 100% 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .others {
+                margin-top: 0%;
+                float: left;
+                padding-left: 0%;
+                width: 100%;
+            }
+
+            .h3 {
+                float: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <h1 style="color:red;text-align: center;">Early Stage Diabetes Risk Predictor</h1>
+        <br>
+        <form action="/" method="post">
+            <div class="row">
+                </br>
+                <span style="text-align:center"><img style="height:100%;width:100%;"
+                        src="https://raw.githubusercontent.com/Atharv-Chaudhari/Initial-Internships/main/Exposys%20Data%20Labs/IMG%20PPT.jpg"></span>
+                </br><br>
+                <h3>Enter Your Details </h3>
+                <h4>Email <span class="required">*</span></h4>
+                <div class="input-group input-group-icon">
+                    <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email"
+                        placeholder="Email Address" required />
+                    <div class="input-icon"><i class="fa fa-envelope"></i></div>
+                </div>
+            </div>
+            </br>
+            <h3 style="color:#7ed321;">Gender<span class="required"> *</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Gender" value="1" id="Gender-male" required />
+                <label for="Gender-male">Male</label>
+                <input type="radio" name="Gender" value="0" id="Gender-female" required />
+                <label for="Gender-female">Female</label>
+            </div>
+            </br>
+            <h3 style="color:#7ed321;">Age <span class="required"> *</span></h3>
+            <div class="input-group others">
+                <input type="number" pattern="^[1-9][0-9]?$|^100$" name="age" min="1" max="100" placeholder="Age" required>
+            </div>
+            </br>
+            <h3 style="color:#399cbd;">Symptoms </h3>
+            <h3 style="color:black;">1) Polyuria <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Polyuria" value="1" id="Polyuria-yes" />
+                <label for="Polyuria-yes">Yes</label>
+                <input type="radio" name="Polyuria" value="0" id="Polyuria-no" checked="true" />
+                <label for="Polyuria-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">2) Polydipsia <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Polydipsia" value="1" id="Polydipsia-yes" />
+                <label for="Polydipsia-yes">Yes</label>
+                <input type="radio" name="Polydipsia" value="0" id="Polydipsia-no" checked="true" />
+                <label for="Polydipsia-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">3) Sudden Weight Loss <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="sudden_weight_loss" value="1" id="sudden_weight_loss-yes" />
+                <label for="sudden_weight_loss-yes">Yes</label>
+                <input type="radio" name="sudden_weight_loss" value="0" id="sudden_weight_loss-no" checked="true" />
+                <label for="sudden_weight_loss-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">4) Weakness <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Weakness" value="1" id="Weakness-yes" />
+                <label for="Weakness-yes">Yes</label>
+                <input type="radio" name="Weakness" value="0" id="Weakness-no" checked="true" />
+                <label for="Weakness-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">5) Polyphagia <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Polyphagia" value="1" id="Polyphagia-yes" />
+                <label for="Polyphagia-yes">Yes</label>
+                <input type="radio" name="Polyphagia" value="0" id="Polyphagia-no" checked="true" />
+                <label for="Polyphagia-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">6) Genital Thrush <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Genital_Thrush" value="1" id="Genital_Thrush-yes" />
+                <label for="Genital_Thrush-yes">Yes</label>
+                <input type="radio" name="Genital_Thrush" value="0" id="Genital_Thrush-no" checked="true" />
+                <label for="Genital_Thrush-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">7) Visual Blurring <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="visual_blurring" value="1" id="visual_blurring-yes" />
+                <label for="visual_blurring-yes">Yes</label>
+                <input type="radio" name="visual_blurring" value="0" id="visual_blurring-no" checked="true" />
+                <label for="visual_blurring-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">8) Itching <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Itching" value="1" id="Itching-yes" />
+                <label for="Itching-yes">Yes</label>
+                <input type="radio" name="Itching" value="0" id="Itching-no" checked="true" />
+                <label for="Itching-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">9) Irritability <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Irritability" value="1" id="Irritability-yes" />
+                <label for="Irritability-yes">Yes</label>
+                <input type="radio" name="Irritability" value="0" id="Irritability-no" checked="true" />
+                <label for="Irritability-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">10) Delayed Healing <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="delayed_healing" value="1" id="delayed_healing-yes" />
+                <label for="delayed_healing-yes">Yes</label>
+                <input type="radio" name="delayed_healing" value="0" id="delayed_healing-no" checked="true" />
+                <label for="delayed_healing-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">11) Partial Paresis <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="partial_paresis" value="1" id="partial_paresis-yes" />
+                <label for="partial_paresis-yes">Yes</label>
+                <input type="radio" name="partial_paresis" value="0" id="partial_paresis-no" checked="true" />
+                <label for="partial_paresis-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">12) Muscle Stiffness <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="muscle_stiffness" value="1" id="muscle_stiffness-yes" />
+                <label for="muscle_stiffness-yes">Yes</label>
+                <input type="radio" name="muscle_stiffness" value="0" id="muscle_stiffness-no" checked="true" />
+                <label for="muscle_stiffness-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">13) Alopecia <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Alopecia" value="1" id="Alopecia-yes" />
+                <label for="Alopecia-yes">Yes</label>
+                <input type="radio" name="Alopecia" value="0" id="Alopecia-no" checked="true" />
+                <label for="Alopecia-no">No</label>
+            </div>
+            </br>
+            <h3 style="color:black;">14) Obesity <span class="required">*</span></h3>
+            <div class="input-group others">
+                <input type="radio" name="Obesity" value="1" id="Obesity-yes" />
+                <label for="Obesity-yes">Yes</label>
+                <input type="radio" name="Obesity" value="0" id="Obesity-no" checked="true" />
+                <label for="Obesity-no">No</label>
+            </div>
+            </br>
+            <div class="submits">
+                <input type="submit" value="Submit" style="background-color: #7ed321; color: white;">
+            </div>
+            </br>
+    </div>
+    </form>
+    </div>
+</body>
+
+</html>

@@ -1,1 +1,5 @@
-idna==3.3htmlmin==0.1.12aiohttp==3.8.1matplotlib==3.2.1py4j==0.10.9.2urllib3==1.25.11oauthlib==3.1.1pyspark==3.2.0pygments==2.10.0imagehash==4.2.1visions==0.7.4six==1.16.0decorator==5.1.0multidict==5.2.0markupsafe==2.0.1numexpr==2.7.3missingno==0.5.0yarl==1.7.2dotnetcore2==2.1.21frozenlist==1.2.0parso==0.8.2pyparsing==2.4.7wcwidth==0.2.5pydantic==1.8.2applicationinsights==0.11.10dataclasses==0.6psutil==5.8.0bottleneck==1.3.2networkx==2.5numba==0.53.1certifi==2021.10.8backports.tempfile==1.0aiosignal==1.2.0ipywidgets==7.6.5cffi==1.15.0cycler==0.11.0backcall==0.2.0pickleshare==0.7.5requests==2.26.0scipy==1.5.2msrestazure==0.6.4colorama==0.4.4xgboost==0.90pandas==0.25.3distro==1.6.0gunicorn==20.1.0backports.weakref==1.0.post1jedi==0.17.2invoke==1.6.0pytz==2021.3isodate==0.6.0sklearn==0.0multimethod==1.5contextvars==2.4configparser==3.7.4pathspec==0.9.0msrest==0.6.21phik==0.12.0kiwisolver==1.3.1immutables==0.16uuid==1.30ipykernel==5.5.6ptyprocess==0.7.0bcrypt==3.2.0pexpect==4.8.0traitlets==4.3.3tornado==6.1lz4==3.1.3joblib==0.14.1llvmlite==0.36.0paramiko==2.8.0numpy==1.18.5seaborn==0.11.2docker==5.0.3statsmodels==0.10.2tqdm==4.62.3cryptography==3.4.8jinja2==2.11.2
+pandas
+sklearn
+xgboost
+joblib
+flask
